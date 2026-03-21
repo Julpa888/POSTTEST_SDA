@@ -37,7 +37,7 @@ bool cekNomorDuplikat(int nomor) {
 
 void tampil(Kereta *arr, int jumlah) {
     if (jumlah == 0) {
-        cout << "\nBelum ada data kereta." << endl;
+        cout << "\n(｡•́︿•̀｡) Belum ada data kereta." << endl;
         return;
     }
 
@@ -61,7 +61,7 @@ void tampil(Kereta *arr, int jumlah) {
 
 void tambah(Kereta *arr, int &jumlah) {
     if (jumlah >= MAX) {
-        cout << "\nData sudah penuh." << endl;
+        cout << "\n(>_<) Data sudah penuh." << endl;
         return;
     }
 
@@ -72,7 +72,7 @@ void tambah(Kereta *arr, int &jumlah) {
     cin >> nomorInput;
     
     if (cekNomorDuplikat(nomorInput)) {
-        cout << "Nomor kereta sudah digunakan!" << endl;
+        cout << "(>_<) Nomor kereta sudah digunakan!" << endl;
         return;
     }
     
@@ -91,13 +91,13 @@ void tambah(Kereta *arr, int &jumlah) {
     cin >> arr[jumlah].harga;
 
     jumlah++;
-    cout << "\nData berhasil ditambahkan!" << endl;
+    cout << "\n(✧◡✧) Data berhasil ditambahkan!" << endl;
 }
 
 // Ini Linear Search
 void cariRute(Kereta *arr, int jumlah) {
     if (jumlah == 0) {
-        cout << "\nData masih kosong." << endl;
+        cout << "\n(｡•́︿•̀｡) Data masih kosong." << endl;
         return;
     }
 
@@ -148,17 +148,19 @@ void cariRute(Kereta *arr, int jumlah) {
     }
     
     if (ketemu) {
-    cout << "+------+--------+------------------+----------------------+--------+-------------+" << endl;
+        cout << "+------+--------+------------------+----------------------+--------+-------------+" << endl;
+        cout << "\n(✧ω✧) Ditemukan kereta untuk rute ini!" << endl;
     } else {
         cout << "| Tidak ditemukan                                                                |" << endl;
         cout << "+------+--------+------------------+----------------------+--------+-------------+" << endl;
+        cout << "\n(｡•́︿•̀｡) Rute tidak tersedia." << endl;
     }
 }
 
 // Ini Jump Search
 void cariNomorJump(Kereta *arr, int jumlah) {
     if (jumlah == 0) {
-        cout << "\nData masih kosong." << endl;
+        cout << "\n(｡•́︿•̀｡) Data masih kosong." << endl;
         return;
     }
 
@@ -198,7 +200,7 @@ void cariNomorJump(Kereta *arr, int jumlah) {
     }
 
     if (posisi != -1) {
-        cout << "\nData Ditemukan!" << endl;
+        cout << "\n(✧ω✧) Data Ditemukan!" << endl;
         cout << "+------+--------+------------------+----------------------+--------+-------------+" << endl;
         cout << "| No.  | Kode   | Nama Kereta      | Rute                 | Jam    | Harga       |" << endl;
         cout << "+------+--------+------------------+----------------------+--------+-------------+" << endl;
@@ -212,7 +214,7 @@ void cariNomorJump(Kereta *arr, int jumlah) {
             << "| " << "¥ " << right << setw(8) << (arr + posisi)->harga << " |" << endl;
         cout << "+------+--------+------------------+----------------------+--------+-------------+" << endl;
     } else {
-        cout << "\nNomor kereta " << cari << " tidak ditemukan." << endl;
+        cout << "\n(｡•́︿•̀｡) Nomor kereta " << cari << " tidak ditemukan." << endl;
     }
 
     for(int i = 0; i < jumlah; i++) {
@@ -268,7 +270,7 @@ void mergeSort(Kereta arr[], int l, int r) {
 // Ini Selection Sort
 void sortHarga(Kereta *arr, int jumlah) {
     if (jumlah < 2) {
-        cout << "\nMinimal 2 data untuk diurutkan." << endl;
+        cout << "\n(◕‿◕) Minimal 2 data untuk diurutkan." << endl;
         return;
     }
 
@@ -284,7 +286,7 @@ void sortHarga(Kereta *arr, int jumlah) {
         }
     }
 
-    cout << "\nData berhasil diurutkan berdasarkan harga (termurah)!" << endl;
+    cout << "\n(✧ω✧) Data berhasil diurutkan berdasarkan harga (termurah)!" << endl;
 }
 
 int main() {
@@ -300,6 +302,7 @@ int main() {
     cout << "\n==========================================" << endl;
     cout << "   SISTEM INFORMASI KERETA API JEPANG" << endl;
     cout << "==========================================" << endl;
+    cout << "\n(◕‿◕) Selamat datang di sistem manajemen kereta Jepang!" << endl;
     
     do {
         cout << "\n=== MENU UTAMA ===" << endl;
@@ -323,16 +326,18 @@ int main() {
             cariNomorJump(dataKereta, n);
         } else if (pilih == 5) {
             mergeSort(dataKereta, 0, n-1);
-            cout << "\nData berhasil diurutkan berdasarkan nama (A-Z)!" << endl;
+            cout << "\n(✧◡✧) Data berhasil diurutkan berdasarkan nama (A-Z)!" << endl;
             tampil(dataKereta, n);
         } else if (pilih == 6) {
             sortHarga(dataKereta, n);
             tampil(dataKereta, n);
         } else if (pilih == 7) {
-            cout << "\nTerima kasih telah menggunakan sistem ini!" << endl;
+            cout << "\n(｡•́︿•̀｡) Yakin mau keluar?" << endl;
+            cout << "Terima kasih telah menggunakan sistem ini! (◕‿◕)" << endl;
+            cout << "Semoga perjalananmu menyenangkan~" << endl;
             break;
         } else {
-            cout << "\nPilihan tidak valid!" << endl;
+            cout << "\n(>_<) Pilihan tidak valid!" << endl;
         }
 
     } while(true);
