@@ -288,8 +288,7 @@ void cariRute(Kereta *arr, int jumlah) {
                 << "| " << setw(6) << (arr+i)->jam << " "
                 << "| " << "¥ " << right << setw(8) << (arr+i)->harga << " |" << endl;
             ketemu = true;
-        }
-    }
+        }}
     
     if (ketemu) {
         cout << "+------+--------+------------------+----------------------+--------+-------------+" << endl;
@@ -298,8 +297,7 @@ void cariRute(Kereta *arr, int jumlah) {
         cout << "| Tidak ditemukan                                                                |" << endl;
         cout << "+------+--------+------------------+----------------------+--------+-------------+" << endl;
         cout << "\n(｡•́︿•̀｡) Rute tidak tersedia." << endl;
-    }
-}
+    }}
 
 void cariNomorJump(Kereta *arr, int jumlah) {
     if (jumlah == 0) {
@@ -316,9 +314,7 @@ void cariNomorJump(Kereta *arr, int jumlah) {
         for (int j = 0; j < jumlah-i-1; j++) {
             if ((arr + j)->nomor > (arr + j + 1)->nomor) {
                 tukar((arr + j), (arr + j + 1));
-            }
-        }
-    }
+            }}}
 
     int cari;
     cout << "\n=== Cari Berdasarkan Nomor (Jump Search) ===" << endl;
@@ -339,8 +335,7 @@ void cariNomorJump(Kereta *arr, int jumlah) {
         if ((arr + i)->nomor == cari) {
             posisi = i;
             break;
-        }
-    }
+        }}
 
     if (posisi != -1) {
         cout << "\n(✧ω✧) Data Ditemukan!" << endl;
@@ -362,8 +357,7 @@ void cariNomorJump(Kereta *arr, int jumlah) {
 
     for(int i = 0; i < jumlah; i++) {
         *(arr + i) = backup[i];
-    }
-}
+    }}
 
 void merge(Kereta arr[], int l, int m, int r) {
     int n1 = m-l+1;
@@ -397,8 +391,7 @@ void merge(Kereta arr[], int l, int m, int r) {
         arr[k] = R[j];
         j++;
         k++;
-    }
-}
+    }}
 
 void mergeSort(Kereta arr[], int l, int r) {
     if (l < r) {
@@ -406,8 +399,7 @@ void mergeSort(Kereta arr[], int l, int r) {
         mergeSort(arr, l, m);
         mergeSort(arr, m+1, r);
         merge(arr, l, m, r);
-    }
-}
+    }}
 
 void sortHarga(Kereta *arr, int jumlah) {
     if (jumlah < 2) {
@@ -424,8 +416,7 @@ void sortHarga(Kereta *arr, int jumlah) {
         }
         if (min != i) {
             tukar((arr + i), (arr + min));
-        }
-    }
+        }}
 
     cout << "\n(✧ω✧) Data berhasil diurutkan berdasarkan harga (termurah)!" << endl;
 }
@@ -504,13 +495,10 @@ void menuTiket() {
                         masukAntrian(&antrianTiket, baru);
                         ketemu = true;
                         break;
-                    }
-                }
+                    }}
                 if (!ketemu) {
                     cout << "\n(>_<) Nomor kereta tidak ditemukan!" << endl;
-                }
-            }
-        }
+                }}}
         else if (pilihTiket == 2) {
             if (!antrianKosong(&antrianTiket)) {
                 Penumpang proses = keluarAntrian(&antrianTiket);
